@@ -15,5 +15,14 @@ export const IncreaseQuantity=(id)=>{
   }
 }
 
+export const DecreseQuantity=(id)=>{
+  return{
+    type : "DECRESE_QUANTITY",
+    payload:id
+  }
+}
+
+
+
 
   

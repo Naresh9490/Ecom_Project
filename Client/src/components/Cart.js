@@ -5,6 +5,7 @@ import { IncreaseQuantity } from "../redux/action";
 import { useDispatch } from "react-redux";
 import { delCart } from "../redux/action";
 import { NavLink } from "react-router-dom";
+import { DecreseQuantity } from "../redux/action";
 function Cart() {
   const getdata = useSelector((state) => state.handleCart);
   // console.log(getdata);
@@ -19,6 +20,10 @@ function Cart() {
     // console.log(product)
     dispatch(delCart(id));
   };
+
+  const DecreaseQty=(id)=>{
+    dispatch(DecreseQuantity(id))
+  }
 
   return (
     <>
@@ -56,7 +61,7 @@ function Cart() {
                         <td>
                           <h5 className="mt-5">
                             {" "}
-                            <button className="btn btn-outline-dark ">
+                            <button className="btn btn-outline-dark " onClick={() => DecreaseQty(item.id)}>
                               -
                             </button>{" "}
                             {item.qty}{" "}
