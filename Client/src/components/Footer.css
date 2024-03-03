@@ -1,0 +1,106 @@
+.face{
+    width: 40px;
+    height: 35px;
+    background-color: rgb(77, 146, 179);
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .face1{
+    width: 40px;
+    height: 35px;
+    background-color: rgba(234, 187, 130, 0.995);
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .google{
+    width: 40px;
+    height: 35px;
+    background-color: rgba(210, 96, 127, 0.995);
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .twit{
+    width: 40px;
+    height: 35px;
+    background-color: rgba(115, 146, 212, 0.995);
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .face:hover{
+   
+    background-color: rgb(42, 159, 212);
+    transform: scale(1.3);
+    transition: all 0.5s;
+  }
+  .face1:hover{
+   
+    background-color: rgba(194, 130, 52, 0.995);
+    transform: scale(1.3);
+    transition: all 0.5s;
+  }
+  .google:hover{
+    transform: scale(1.3);
+    transition: all 0.5s; 
+    background-color: rgba(225, 72, 113, 0.995);
+  }
+  .twit:hover{
+    transform: scale(1.3);
+    transition: all 0.5s; 
+    background-color: rgba(72, 119, 222, 0.995);
+  }
+  .sp1{
+    width: 65px;
+    height: 5px;
+    background-color: #ff7b00;
+    border: none;
+  }
+  .sp2{
+    width: 5px;
+    height: 5px;
+    background-color: #ff7b00;
+    border: none;
+   }
+   .sp3{
+    width: 5px;
+    height: 5px;
+    background-color: #ff7b00;
+    border: none;
+   }
+   .face3{
+    width: 40px;
+    height: 35px;
+    background-color: bisque;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+   }
+   .custom-18{
+    font-size: 13px;
+  
+   }
+   .custom-16{
+    background-color: bisque;
+    border-radius: 20px;
+    font-size: 12px;
+    position: relative;
+    z-index: 1000;
+    
+   }
+   .custom-17{
+    width: 230px;
+    height: 230px;
+    border: 35px solid whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1000;
+    left: 14%;
+    top: -30px;
+   }
+   .face3:hover{
+    transform: scale(1.3);
+    transition: all 0.5s; 
+  }
