@@ -34,7 +34,7 @@ const handleCart = (state = cart, action) => {
     case "DECRESE_QUANTITY":
       // console.log("Increasing quantity for product with id:", product);
       return state.map((item) =>
-        item.id === product ? { ...item, qty: item.qty - 1 } : item
+        item.id === product && item.qty > 0 ? { ...item, qty: item.qty - 1 } : item
       ).filter(item => item.qty > 0);
 
       break;

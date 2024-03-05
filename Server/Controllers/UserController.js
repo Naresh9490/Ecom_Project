@@ -12,9 +12,24 @@ const register = (req, res) => {
 
 // Controller function for user login
 const login = (req, res) => {
-  // Handle user login logic
-  // Example: Compare credentials, generate JWT, etc.
-  res.status(200).json({ message: "Login successful" });
+  const { username, password } = req.body;
+
+  User.findOne({ username })
+  .then((existingUser) => {
+    if (existingUser) {
+      if (existingUser.password === password) {
+        res.status(200).json({ message: "Login successful" });
+      }else {
+        res.staus(401).json({error:"Invalid Password!"})
+      }
+    } else{
+      res.staus(404).json({error:"Username not found!"})
+    }
+  })
+  .catch((error)=>{
+    console.log(error);
+    res.status(500).json({error:"Internal Server Error"})
+  })
 };
 
 // Controller function to get all users
@@ -30,5 +45,5 @@ const getAlluses = (req, res) => {
 module.exports = {
   register,
   login,
-  getAlluses
+  getAlluses,
 };
