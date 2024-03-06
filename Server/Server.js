@@ -5,7 +5,7 @@ const mongoose = require('./config/Dbconfig');
 const userRouter = require('./Routers/UserRouter');
 const PORT = 8080;
 
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
 
 app.use(express.json());
 
