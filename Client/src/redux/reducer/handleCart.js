@@ -37,6 +37,8 @@ const handleCart = (state = cart, action) => {
         item.id === product && item.qty > 0 ? { ...item, qty: item.qty - 1 } : item
       ).filter(item => item.qty > 0);
 
+
+      
       break;
     default:
       return state;

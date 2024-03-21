@@ -2,48 +2,53 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import handleCart from "../redux/reducer/handleCart";
-import { useState } from "react";
-import axios from "axios";
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
+// import { useState } from "react";
+// import axios from "axios";
+// import Snackbar from "@mui/material/Snackbar";
+// import Alert from "@mui/material/Alert";
 const Navbar = () => {
   const getdata = useSelector((state) => state.handleCart);
 
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const [formData, setFormData] = useState({
+  //   username: "",
+  //   email: "",
+  //   password: "",
+  // });
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    axios
-      .post("http://localhost:8080/api/users/register", formData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error("Registration failed:", error);
-      });
-  };
-///////////Toast  Message Showing ////////////////////
-const [open, setOpen] = React.useState(false);
+  //   axios
+  //     .post("http://localhost:8080/api/users/register", formData)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Registration failed:", error);
+  //     });
+  // };
 
-  const handleClick = () => {
-    setOpen(true);
-  };
+  
+  // ///////////Toast  Message Showing ////////////////////
+  // const [open, setOpen] = React.useState(false);
 
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
 
-    setOpen(false);
-  };
+  // const handleClose = (
+  //   event?: React.SyntheticEvent | Event,
+  //   reason?: string
+  // ) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+
+  //   setOpen(false);
+  // };
 
   return (
     <>
@@ -95,7 +100,7 @@ const [open, setOpen] = React.useState(false);
                 </li>
               </ul>
               <div className="buttons">
-                <NavLink
+                {/* <NavLink
                   to="/login"
                   className="btn btn-outline-dark"
                   type="button"
@@ -103,8 +108,8 @@ const [open, setOpen] = React.useState(false);
                   data-bs-target="#loginModal"
                 >
                   <i className="fa fa-sign-in me-1"></i> Login
-                </NavLink>
-
+                </NavLink> */}
+{/* 
                 <NavLink
                   to="/register"
                   className="btn btn-outline-dark ms-2"
@@ -112,7 +117,7 @@ const [open, setOpen] = React.useState(false);
                   data-bs-target="#signupModal"
                 >
                   <i className="fa fa-user-plus me-1"></i> Register
-                </NavLink>
+                </NavLink> */}
                 <NavLink to={`/cart`} className="btn btn-outline-dark ms-2">
                   <i className="fa fa-shopping-cart me-1"></i> Cart (
                   {getdata.length})
@@ -123,7 +128,7 @@ const [open, setOpen] = React.useState(false);
         </nav>
       </div>
       {/* Login */}
-      <div
+      {/* <div
         className="modal fade"
         id="loginModal"
         tabIndex="-1"
@@ -162,7 +167,6 @@ const [open, setOpen] = React.useState(false);
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                   />
-                 
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">
@@ -194,9 +198,9 @@ const [open, setOpen] = React.useState(false);
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Register */}
-      <div
+      {/* <div
         className="modal fade"
         id="signupModal"
         tabIndex="-1"
@@ -207,7 +211,7 @@ const [open, setOpen] = React.useState(false);
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Login
+                Register
               </h5>
               <button
                 type="button"
@@ -271,7 +275,8 @@ const [open, setOpen] = React.useState(false);
 
                 <button
                   type="submit"
-                  className="btn btn-outline-primary w-100 mt-5" onClick={handleClick}
+                  className="btn btn-outline-primary w-100 mt-5"
+                  onClick={handleClick}
                 >
                   Register
                 </button>
@@ -285,11 +290,11 @@ const [open, setOpen] = React.useState(false);
           onClose={handleClose}
           severity="success"
           variant="filled"
-          sx={{ width: '100%' }}
+          sx={{ width: "100%" }}
         >
           Registration Successful !
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </>
   );
 };

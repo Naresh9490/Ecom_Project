@@ -5,7 +5,10 @@ const mongoose = require('./config/Dbconfig');
 const userRouter = require('./Routers/UserRouter');
 const PORT = 8080;
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:3000"
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
